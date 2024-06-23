@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLOWERS WORLD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <div class="container">
+    <h2 class="object" data-value="3">FLOWERS<br><span>WORLD</span></h2>
+    
+    <img src="flower2.jpg" class="object" data-value="60" alt="">
+    <img src="flower5.jpg" class="object" data-value="50" alt=""> 
+    <img src="flower7.jpg " class="object" data-value="60" alt=""> 
+    <img src="flower6.jpg" class="object" data-value="-4" alt=""> 
+   
+     
+</div>
+
+<script type="text/javascript">
+    document.addEventListener("mousemove",parallax);
+    function parallax(e){
+        document.querySelectorAll(".object").forEach(function(move){
+   
+            var moving_value = move.getAttribute("data-value");
+            var x = (e.clientX * moving_value) / 250;
+            var y = (e.clientY * moving_value) / 250;
+
+            move.style.transform = "translateX(" + x + "px) translateY("+ y +"px)";
+
+
+        });
+    }
+
+</script>
+
+</body>
+</html>
